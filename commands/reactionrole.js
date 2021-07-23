@@ -23,7 +23,7 @@ module.exports = {
                 .setDescription(
                     `${args[2]}\n\n ${emoji_1} para ${role_1}\n ${emoji_2} para ${role_2}`);
 
-            let messageEmbed = await client.channels.cache.get(canal).send(embed); // message.channel.send(embed);
+            let messageEmbed = await client.channels.cache.get(canal).send(embed);
             messageEmbed.react(emoji_1);
             messageEmbed.react(emoji_2);
 
