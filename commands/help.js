@@ -1,7 +1,8 @@
 module.exports = {
-    name: 'sugerir',
-    aliases: ['sugerencia', 'y si'],
-    description: 'crea una sugerencia y la envia al canal respectivo',
+    name: 'help',
+    aliases: ['ayuda', 'como uso'],
+    description: 'modulo de ayuda y guia de commands para Rei',
+    usage: '<rei> help <comando>',
     permissions: [],
     execute(message, args, client, discord) {
         
