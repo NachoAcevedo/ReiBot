@@ -1,5 +1,7 @@
 // const Discord = require('discord.js');
 
+const { Channel } = require("discord.js");
+
 module.exports = {
     name: 'reactionrole',
     aliases: ['rr', 'roles de reaccion', 'reaccion rol', 'rol reaccion'],
@@ -8,7 +10,7 @@ module.exports = {
     permissions: ['MANAGE_CHANNELS'],
     async execute(client, message, args, Discord) {
         {
-            const channel = args[0];
+            const canal = args[0];
             const role_1 = message.guild.roles.cache.find(role => role.name === args[4]);
             const role_2 = message.guild.roles.cache.find(role => role.name === args[6]);
 
@@ -21,7 +23,7 @@ module.exports = {
                 .setDescription(
                     `${args[2]}\n\n ${emoji_1} para ${role_1}\n ${emoji_2} para ${role_2}`);
 
-            let messageEmbed = await message.channel.send(embed);
+            let messageEmbed = await client.channels.cache.get(canal).send(embed); // message.channel.send(embed);
             messageEmbed.react(emoji_1);
             messageEmbed.react(emoji_2);
 
@@ -35,7 +37,7 @@ module.exports = {
                 if (user.bot) return;
                 if (!reaction.message.guild) return;
 
-                if (reaction.message.channel.id == channel) {
+                if (reaction.message.channel.id == canal) {
                     if (reaction.emoji.name === emoji_1) {
                         await reaction.message.guild.members.cache.get(user.id).roles.add(role_1);
                     }
