@@ -8,7 +8,7 @@ module.exports = (Discord, client, message) => {
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-    if(!command) return message.channel.send('Ese no es un comando que conozca, usa `rei ayuda` para ver la lista de comandos completa')
+    if(!command) return message.channel.send('Ese no es un comando que conozca aun, usa `rei ayuda` para ver la lista de comandos completa')
 
     const validPermissions = [                  //verifica los permisos
       "CREATE_INSTANT_INVITE",
