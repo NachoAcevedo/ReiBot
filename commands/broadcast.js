@@ -10,7 +10,7 @@ module.exports = {
         let avatar = user.avatarURL();                  //guarda el avatar del usuario
         const member = message.guild.member(user);
 
-        let color = 'placeholder';
+        let color = 'RANDOM';
         let titulo = args[0];
         let descripcion = args[1];
         let imagen = args[2];
