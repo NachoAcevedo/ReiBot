@@ -1,8 +1,9 @@
 module.exports = {
-   // name: "ticket",
-    aliases: [],
+    // name: "ticket",
+    // aliases: [],
     description: "Abre un canal con soporte",
     permissions: [],
+    usage: 'rei ticket', 
     async execute(message, args, client, discord) {
       const channel = await message.guild.channels.create(`ticket de ${message.author.tag}`); // crea un canal nuevo
       
