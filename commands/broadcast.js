@@ -19,15 +19,8 @@ module.exports = {
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor(color)
-        //.setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         .setTitle(titulo)
         .setDescription(descripcion)
-        // .addFields(                                     //cuerpo
-        //     {name: 'Campo 1', value: 'regla 1'},
-        //     {name: 'Campo 2', value: 'regla 2'},
-        //     {name: 'Campo 3', value: 'regla 3'},
-        //     {name: 'Campo 4', value: 'regla 4'}
-        // )
         .setImage(imagen)
         .setFooter(`Anuncio de ${nickname}`, message.author.displayAvatarURL({ dynamic: true }))   //mensaje de abajo
 
