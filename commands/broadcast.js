@@ -8,12 +8,14 @@ module.exports = {
         let user = message.author;                      //guarda el id del usuario
         let nickname = message.author.username;         //guarda el apodo del usuario
         let avatar = user.avatarURL();                  //guarda el avatar del usuario
+
         const member = message.guild.member(user);
+        const canal = args[0];
 
         let color = 'RANDOM';
-        let titulo = args[0];
-        let descripcion = args[1];
-        let imagen = args[2];
+        let titulo = args[1];
+        let descripcion = args[2];
+        let imagen = args[3];
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor(color)
@@ -29,6 +31,7 @@ module.exports = {
         .setImage(imagen)
         .setFooter(`Anuncio de ${nickname}`, message.author.displayAvatarURL({ dynamic: true }))   //mensaje de abajo
 
-        message.channel.send(newEmbed);
+        client.channels.cache.get(canal).send(newEmbed);
+        client.channels.cache.get(canal).send(`||@everyone perdon por el ping||`);
     }
 }
