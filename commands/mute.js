@@ -13,18 +13,20 @@ module.exports = {
 
             let memberTarget = message.guild.members.cache.get(target.id);
 
-            if (!args[1]){
+            if (!args[1]) {
                 memberTarget.roles.add(muteRole);
-                message.channel.send(`<@${memberTarget.user.id}> fue Silenciado hasta que algun Mod lo revierta`);
+                let posibles = ['algun Mod lo revierta', 'nuevo aviso', 'pasa un tiempo indefinido',]
+                let hasta_que = Math.floor(Math.random() * posibles.length);
+                message.channel.send(`<@${memberTarget.user.id}> fue Silenciado hasta que ${hasta_que}`);
                 return
             }
-                memberTarget.roles.add(muteRole);
-                message.channel.send(`<@${memberTarget.user.id}> fue Silenciado por ${ms(ms(args[1]))}`);
+            memberTarget.roles.add(muteRole);
+            message.channel.send(`<@${memberTarget.user.id}> fue Silenciado por ${ms(ms(args[1]))}`);
 
-                setTimeout(function() {
-                    memberTarget.roles.remove(muteRole);
-                    message.channel.send(`<@${memberTarget.user.id}> ya podes volver a hablar con normalidad`);
-                }, ms(args[1]));
+            setTimeout(function () {
+                memberTarget.roles.remove(muteRole);
+                message.channel.send(`<@${memberTarget.user.id}> ya podes volver a hablar con normalidad`);
+            }, ms(args[1]));
 
         } else {
             message.channel.send('Perdon, pero no puede encontrar a ese Usuario');
