@@ -1,6 +1,6 @@
 ReiBot, bot todo en uno para discord completamente en español! con acento Argentino
 
-Version. v0.9
+Version. v0.9.5 (pre help & ticket)
     
     Ya disponible:          purge, avatar, mute/unmute, unknown command, broadcast (embed), reactionroles (2), remainder, suggestion, 
 
