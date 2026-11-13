@@ -1,1 +1,3 @@
 /ignora2
+.env
+node_modules/
